@@ -1,7 +1,13 @@
-doctype html
+doctype
 html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    
+    script(src="/javascripts/vendor/Tonejs/Tone.min.js")
+    script(src="/javascripts/vendor/nexus-js/NexusUI.js")
   body
-    block content
+    section#wrapper
+        block content
+        
+    script(src="/javascripts/reVoicr.js")

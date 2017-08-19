@@ -2,4 +2,11 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  
+  #synth
+    block buttons
+      span(nexus-ui="toggle", id="play")
+    block dials
+      span(nexus-ui="dial", id="wet")
+      span(nexus-ui="dial", id="dist")
+      span(nexus-ui="dial", id="speed", min=0, max=10)
