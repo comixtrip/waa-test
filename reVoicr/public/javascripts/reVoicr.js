@@ -5,7 +5,15 @@ distContainer.dist.value = 10
 distContainer.speed.value = 1
 distContainer.play.value = 0
 
-var dist = new Tone.Distortion().toMaster()
+
+var phaser = new Tone.Phaser({
+	"frequency" : 5, 
+	"octaves" : 5, 
+	"baseFrequency" : 1000
+}).toMaster()
+
+var dist = new Tone.Distortion().connect(phaser)
+
 var player = new Tone.Player("/audio/boring.mp3").connect(dist)
 
 dist.wet.value = distContainer.wet.value
